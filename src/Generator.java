@@ -21,6 +21,11 @@ public final class Generator {
         loremWords.removeIf(String::isEmpty);
     }
 
+    public static boolean getRandomBoolean() {
+        Random random = new Random();
+        return random.nextBoolean();
+    }
+
     public static LocalDate makeDataBorth() {
         LocalDate start = LocalDate.of(1970, Month.JANUARY, 1);
         long days = ChronoUnit.DAYS.between(start, LocalDate.now());

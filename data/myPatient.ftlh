@@ -26,22 +26,16 @@
         </thead>
         <tbody>
             <#list patients as patient>
+                <td>${patient.name}</td>
+                <td>${patient.lastName}</td>
+                <td>${patient.date}</td>
                 <#if patient.type>
-                    <tr style="background-color: red">
-                    <td>${patient.name}</td>
-                    <td>${patient.lastName}</td>
-                    <td>${patient.date}</td>
-                    <td>${patient.type?string("тяжело","нормально")}</td>
-                    <td>${patient.analyze}</td>
-                <#else>
-                    <tr style="background-color: red">
-                    <td>${patient.name}</td>
-                    <td>${patient.lastName}</td>
-                    <td>${patient.date}</td>
-                    <td>${patient.type?string("тяжело","нормально")}</td>
+                <td style="background-color: red">${patient.type?string("тяжело","нормально")}</td>
+                    <#else>
+                        <td style="background-color: aquamarine">${patient.type?string("тяжело","нормально")}</td>
                 </#if>
-                </tr>
 
+                <td>${patient.analyze}</td>
             </#list>
 </div>
 </tbody>

@@ -25,7 +25,6 @@ public class Server extends BasicServer {
         Map<String,String> params = Utils.parseUrlEncoded(queryParams,"&");
         String dayId = params.getOrDefault("dayId","null");
         DayDataModel dataModel =getDayDataModel(dayId);
-        System.out.println(dataModel);
         renderTemplate(exchange, "/myPatient.ftlh",dataModel);
 
     }
@@ -36,7 +35,7 @@ public class Server extends BasicServer {
 
     public List<Patient> getPatients(int i){
         List<Patient> patients = new ArrayList<>();
-         Patient patient = new Patient(i,Generator.makeName(),Generator.makeName(),Generator.makeDataBorth(),true,Generator.makeDescription());
+         Patient patient = new Patient(i,Generator.makeName(),Generator.makeName(),Generator.makeDataBorth(),Generator.getRandomBoolean(),Generator.makeDescription());
          patients.add(patient);
          return patients;
     }
