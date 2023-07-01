@@ -200,6 +200,10 @@ public abstract class BasicServer {
     protected void setCookie(HttpExchange exchange, Cookie cookie) {
         exchange.getResponseHeaders().add("Set-Cookie", cookie.toString());
     }
+    protected String getQueryParams(HttpExchange exchange) {
+        String query = exchange.getRequestURI().getQuery();
+        return Objects.nonNull(query) ? query : "";
+    }
 
 //    public boolean correctLogin(HttpExchange exchange) {
 //        List<User> users = userDataModel.getUsers();

@@ -1,0 +1,46 @@
+{
+  "days": [
+    {
+      "day": 1,
+      "patients": [
+        {
+          "id": 1,
+          "name": "John",
+          "lastName": "Doe",
+          "date": "2022-10-01",
+          "type": true,
+          "analyze": "blood test"
+        },
+        {
+          "id": 2,
+          "name": "Jane",
+          "lastName": "Smith",
+          "date": "2022-10-01",
+          "type": false,
+          "analyze": "urine test"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "patients": [
+        {
+          "id": 3,
+          "name": "Alice",
+          "lastName": "Johnson",
+          "date": "2022-10-02",
+          "type": true,
+          "analyze": "blood test"
+        },
+        {
+          "id": 4,
+          "name": "Bob",
+          "lastName": "Williams",
+          "date": "2022-10-02",
+          "type": false,
+          "analyze": "urine test"
+        }
+      ]
+    }
+  ]
+}
