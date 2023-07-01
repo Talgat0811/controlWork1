@@ -25,6 +25,9 @@
                 <p style="background-color: aquamarine">Тип болезни: ${patient.type?string("тяжело","нормально")}</p>
             </#if>
             <p>Краткий анализ: ${patient.analyze}</p>
+
+            <p><a href="/delete/?id=${patient.id}" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">delete</a></p>
+
             <hr>
         </#list>
 </div>

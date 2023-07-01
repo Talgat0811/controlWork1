@@ -29,6 +29,7 @@ public class Patient {
         this.analyze = analyze;
         this.time = time;
     }
+    public Patient(){};
 
 
 

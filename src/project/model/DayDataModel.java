@@ -7,6 +7,7 @@ public class DayDataModel {
     private Integer id;
     private LocalDate day;
     private List<Patient> patients;
+    private LocalDate curentDay= LocalDate.now();
 
 
     public DayDataModel(int id, LocalDate day, List<Patient> patients) {

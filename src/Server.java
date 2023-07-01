@@ -15,6 +15,16 @@ public class Server extends BasicServer {
         super(host, port);
         registerGet("/", this::mainHandler);
         registerGet("/myPatient",this::myPatientsHndler);
+        registerGet("/delete",this::deletePatient);
+    }
+
+    private void deletePatient(HttpExchange exchange) {
+        String queryParams =getQueryParams(exchange);
+        Map<String,String> params = Utils.parseUrlEncoded(queryParams,"&");
+        String id = params.getOrDefault("id","null");
+        Patient patient = getPatientById(id);
+        redirect303(exchange,"/myPatient");
+
     }
 
     private void myPatientsHndler(HttpExchange exchange) {
@@ -25,7 +35,6 @@ public class Server extends BasicServer {
         List<Patient> patients = sortByLocalTime(dataModel.getPatients());
         dataModel.setPatients(patients);
         renderTemplate(exchange, "/myPatient.ftlh",dataModel);
-
     }
 
     public void mainHandler(HttpExchange exchange) {
