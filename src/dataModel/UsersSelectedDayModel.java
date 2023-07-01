@@ -22,17 +22,17 @@ public class UsersSelectedDayModel {
     public void setDays(List<SelectedDay> days) {
         this.days = days;
     }
-    public UsersSelectedDayModel(SelectedDay day) {
-        this.day = day;
+    public UsersSelectedDayModel() {
+        
     }
-    public UsersSelectedDayModel getUserSelectedDayModel(String bookId) {
-        int id = Integer.parseInt(bookId);
-        SelectedDay day = days.stream()
-                .filter(e -> id == e.getDay())
-                .findAny()
-                .orElse(days.get(0));
-        return new UsersSelectedDayModel(day);
-
-    }
+//    public UsersSelectedDayModel getUserSelectedDayModel(String bookId) {
+//        int id = Integer.parseInt(bookId);
+//        SelectedDay day = days.stream()
+//                .filter(e -> id == e.getDay())
+//                .findAny()
+//                .orElse(days.get(0));
+//        return new UsersSelectedDayModel(day);
+//
+//    }
 
 }

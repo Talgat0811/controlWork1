@@ -1,12 +1,25 @@
 package project.model;
 
+import java.time.LocalDate;
+
 public class Patient {
     private int id;
     private String name;
     private String lastName;
-    private String date;
+    private LocalDate date;
     private boolean type;
     private String analyze;
+
+    public Patient(int id, String name, String lastName, LocalDate date, boolean type, String analyze) {
+        this.id = id;
+        this.name = name;
+        this.lastName = lastName;
+        this.date = date;
+        this.type = type;
+        this.analyze = analyze;
+    }
+
+
 
     public int getId() {
         return id;
@@ -32,11 +45,11 @@ public class Patient {
         this.lastName = lastName;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 

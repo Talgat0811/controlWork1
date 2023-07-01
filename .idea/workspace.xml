@@ -39,7 +39,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Amin_stors/Desktop/controlWork/data/images",
+    "last_opened_file_path": "C:/Users/Amin_stors/Desktop/controlWork/src",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -53,11 +53,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Amin_stors\Desktop\controlWork\src" />
       <recent name="C:\Users\Amin_stors\Desktop\controlWork\data\images" />
       <recent name="C:\Users\Amin_stors\Desktop\controlWork\data" />
       <recent name="C:\Users\Amin_stors\AttractorWorks\6-month(NETWORKS) — копия\lab\lab\src\project\server" />
       <recent name="C:\Users\Amin_stors\AttractorWorks\6-month(NETWORKS) — копия\lab\lab\vendor" />
-      <recent name="C:\Users\Amin_stors\AttractorWorks\6-month(NETWORKS) — копия\lab\lab" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Amin_stors\AttractorWorks\6-month(NETWORKS) — копия\lab\lab\vendor" />
@@ -91,7 +91,7 @@
       <workItem from="1688143167892" duration="86000" />
       <workItem from="1688143274485" duration="10059000" />
       <workItem from="1688154719724" duration="406000" />
-      <workItem from="1688155147335" duration="10258000" />
+      <workItem from="1688155147335" duration="15872000" />
     </task>
     <servers />
   </component>
