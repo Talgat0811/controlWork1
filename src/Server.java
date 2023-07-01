@@ -7,10 +7,7 @@ import project.util.Utils;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
+import java.util.*;
 
 
 public class Server extends BasicServer {
@@ -25,6 +22,8 @@ public class Server extends BasicServer {
         Map<String,String> params = Utils.parseUrlEncoded(queryParams,"&");
         String dayId = params.getOrDefault("dayId","null");
         DayDataModel dataModel =getDayDataModel(dayId);
+        List<Patient> patients = sortByLocalTime(dataModel.getPatients());
+        dataModel.setPatients(patients);
         renderTemplate(exchange, "/myPatient.ftlh",dataModel);
 
     }
@@ -33,23 +32,17 @@ public class Server extends BasicServer {
         renderTemplate(exchange, "main.ftlh",getMonthModel());
     }
 
-    public List<Patient> getPatients(int i){
-        List<Patient> patients = new ArrayList<>();
-         Patient patient = new Patient(i,Generator.makeName(),Generator.makeName(),Generator.makeDataBorth(),Generator.getRandomBoolean(),Generator.makeDescription());
-         patients.add(patient);
-         return patients;
-    }
     public MonthDataModel getMonthModel() {
         List<DayDataModel> days = new ArrayList<>();
         for(int i = 1; i<32;i++){
-            days.add(new DayDataModel(i, LocalDate.of(2023, 7,i),getPatients(i)));
+            days.add(new DayDataModel(i, LocalDate.of(2023, 7,i),Generator.getPatients(i)));
         }
         return new MonthDataModel(days);
     }
     public List<DayDataModel> getDaysDataModel() {
         List<DayDataModel> days = new ArrayList<>();
         for(int i = 1; i<32;i++){
-            days.add(new DayDataModel(i, LocalDate.of(2023, 7,i),getPatients(i)));
+            days.add(new DayDataModel(i, LocalDate.of(2023, 7,i),Generator.getPatients(i)));
         }
         return days;
     }
@@ -62,6 +55,15 @@ public class Server extends BasicServer {
             }
         }
         return null;
+    }
+    public List<Patient> sortByLocalTime(List<Patient> patients) {
+        Collections.sort(patients, new Comparator<Patient>() {
+            @Override
+            public int compare(Patient p1, Patient p2) {
+                return p1.getTime().compareTo(p2.getTime());
+            }
+        });
+        return patients;
     }
 
 }

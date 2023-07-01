@@ -14,29 +14,19 @@
 <body>
 <div class="container-fluid">
 
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">Имя</th>
-            <th scope="col">Фамилия</th>
-            <th scope="col">День Рождения</th>
-            <th scope="col">Тип болезни</th>
-            <th scope="col">Краткий анализ</th>
-        </tr>
-        </thead>
-        <tbody>
-            <#list patients as patient>
-                <td>${patient.name}</td>
-                <td>${patient.lastName}</td>
-                <td>${patient.date}</td>
-                <#if patient.type>
-                <td style="background-color: red">${patient.type?string("тяжело","нормально")}</td>
-                    <#else>
-                        <td style="background-color: aquamarine">${patient.type?string("тяжело","нормально")}</td>
-                </#if>
-
-                <td>${patient.analyze}</td>
-            </#list>
+        <#list patients as patient>
+            <p>Имя: ${patient.name}</p>
+            <p> Фамилия:  ${patient.lastName}</p>
+            <p> Дата Рождения: ${patient.date}</p>
+            <p> Время: ${patient.time}</p>
+            <#if patient.type>
+                <p style="background-color: red">Тип болезни: ${patient.type?string("тяжело","нормально")}</p>
+            <#else>
+                <p style="background-color: aquamarine">Тип болезни: ${patient.type?string("тяжело","нормально")}</p>
+            </#if>
+            <p>Краткий анализ: ${patient.analyze}</p>
+            <hr>
+        </#list>
 </div>
 </tbody>
 </table>

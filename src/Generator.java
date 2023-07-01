@@ -1,9 +1,13 @@
+import project.model.Patient;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.Month;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -46,6 +50,27 @@ public final class Generator {
 
     public static String makeDescription() {
         return makeGibberish(20, 10);
+    }
+    public static List<Patient> getPatients(int i){
+        Random random = new Random();
+        int count = random.nextInt(1,10);
+        List<Patient> patients = new ArrayList<>();
+        for(int j = 1; j<count; j++){
+            patients.add(new Patient(i,Generator.makeName(),Generator.makeName(),Generator.makeDataBorth(),Generator.getRandomBoolean(),Generator.makeDescription(),getRndLocalTime()));
+        }
+        return patients;
+    }
+    public static LocalTime getRndLocalTime(){
+        LocalTime time1 = LocalTime.of(8, 0, 0);
+        LocalTime time2 = LocalTime.of(15, 0, 0);
+        Random rand = new Random();
+
+        int hours = rand.nextInt((time2.getHour() - time1.getHour()) + 1) + time1.getHour();
+        int minutes =  rand.nextInt((time2.getMinute() - time1.getMinute()) + 1) + time1.getMinute();
+        int seconds = rand.nextInt((time2.getSecond() - time1.getSecond()) + 1) + time1.getSecond();
+
+        LocalTime random = LocalTime.of(hours,minutes,seconds);
+        return random;
     }
 
     private static String makeGibberish(int randomAmount, int min) {

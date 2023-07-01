@@ -1,6 +1,7 @@
 package project.model;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class Patient {
     private int id;
@@ -9,14 +10,24 @@ public class Patient {
     private LocalDate date;
     private boolean type;
     private String analyze;
+    private LocalTime time;
 
-    public Patient(int id, String name, String lastName, LocalDate date, boolean type, String analyze) {
+    public LocalTime getTime() {
+        return time;
+    }
+
+    public void setTime(LocalTime time) {
+        this.time = time;
+    }
+
+    public Patient(int id, String name, String lastName, LocalDate date, boolean type, String analyze, LocalTime time) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
         this.date = date;
         this.type = type;
         this.analyze = analyze;
+        this.time = time;
     }
 
 

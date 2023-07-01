@@ -22,6 +22,7 @@ import java.util.stream.Collectors;
 
 public abstract class BasicServer {
 
+
     private final HttpServer server;
     private final static Configuration freemarker = initFreeMarker();
     private final String dataDir = "data";
